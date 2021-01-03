@@ -1,2 +1,3 @@
-from .users import *
-from .clients import *
+from .users import UserAdmin
+from .clients import ClientAdmin
+from .employee import EmployeeAdmin

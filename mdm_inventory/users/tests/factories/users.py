@@ -15,8 +15,6 @@ class UserFactory(factory.django.DjangoModelFactory):
     username = factory.Sequence(lambda n: "usuario_%s" % n)
     email = factory.LazyAttribute(lambda a: '{}@example.com'.format(a.username).lower(),)
     password = factory.PostGenerationMethodCall('set_password', 'clave123456*')
-    is_manager = False
-    is_cashier = False
     is_superuser = False
     is_verified = True
     is_staff = False

@@ -16,7 +16,7 @@ class Client(BasicModel,models.Model):
     )
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
     full_name = models.CharField(_("Nombre completo"), max_length=50)
-    address = models.OneToOneField(Address, on_delete=models.CASCADE)
+    address = models.OneToOneField(Address, on_delete=models.CASCADE , null=True , blank=True)
 
     def __str__(self):
         return f'{self.first_name} - {self.dni}'
