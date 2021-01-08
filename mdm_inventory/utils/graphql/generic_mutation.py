@@ -119,9 +119,8 @@ class GenericMutationSerializer(graphene.Mutation):
         # Get input data
         data = cls.get_data(info, **kwargs)
         instance = None
-
         if cls.update or cls.delete:
-            pk = data.pop('id')
+            pk = int(data.pop('id'))
             instance = cls.get_instance(info, pk, **kwargs)
 
         cls.check_permissions(info, data, instance)
